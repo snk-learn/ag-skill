@@ -1,22 +1,41 @@
-# ag-skill
+<div align="center">
+  <img src="docs/images/Logo.png" alt="ag-skill logo" width="220" />
 
-`ag-skill` is a command-line tool for installing and managing curated AI agent skills in any repository.
+  # ag-skill
 
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  **A command-line tool for installing and managing curated AI agent skills in any repository.**
+
+  [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+</div>
+
+---
 
 This README covers only how to install and use the CLI.
+
+## Table of Contents
+
+- [What ag-skill Does](#what-ag-skill-does)
+- [Requirements](#requirements)
+- [Install](#install)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+- [CLI Help](#cli-help)
+- [Common Examples](#common-examples)
+- [Notes](#notes)
+- [Docs](#docs)
+- [License](#license)
 
 ## What ag-skill Does
 
 With `ag-skill`, you can:
 
-- list available skills
-- install one or more skills into the current repository
-- remove installed skills
-- upgrade installed skills
-- scaffold a custom skill
-- validate installed skills
+- List available skills
+- Install one or more skills into the current repository
+- Remove installed skills
+- Upgrade installed skills
+- Scaffold a custom skill
+- Validate installed skills
 
 ## Requirements
 
@@ -69,6 +88,8 @@ Example:
 ````powershell
 ag-skill install testing
 ````
+
+---
 
 ## Usage
 
@@ -238,6 +259,8 @@ Help:
 ag-skill version --help
 ````
 
+---
+
 ## CLI Help
 
 ### Top-level help
@@ -257,6 +280,8 @@ ag-skill add --help
 ag-skill doctor --help
 ag-skill version --help
 ````
+
+---
 
 ## Common Examples
 
@@ -308,6 +333,8 @@ Validate installed skills:
 ag-skill doctor
 ````
 
+---
+
 ## Notes
 
 - Run ag-skill inside the repository you want to update.
@@ -315,9 +342,13 @@ ag-skill doctor
 - The `install` command installs catalog skills into a repository.
 - The `add` command scaffolds a new custom skill.
 
+---
+
 ## Docs
 
 - [Token Observability Skill Guide](docs/skills/token-obserabilty.md)
+
+---
 
 ## License
 
