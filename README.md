@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/images/Logo.png" alt="ag-skill logo" width="220" />
+  <img src="docs/images/Logo.png" alt="ag-skill logo" width="800" />
 
   # ag-skill
 
