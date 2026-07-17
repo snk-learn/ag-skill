@@ -1,0 +1,61 @@
+{
+  "version": "0.1.0",
+
+  "configurations": [
+    {
+      "name": "ag-skill: list",
+
+      "type": "debugpy",
+
+      "request": "launch",
+
+      "module": "loom.cli",
+
+      "args": ["list"],
+
+      "console": "integratedTerminal",
+
+      "env": { "LOOM_DEV_MODE": "1" }
+    },
+
+    {
+      "name": "ag-skill: install python-coding-standards",
+
+      "type": "debugpy",
+
+      "request": "launch",
+
+      "module": "loom.cli",
+
+      "args": [
+        "install",
+        "python-coding-standards",
+        "--target",
+        "copilot",
+        "--force"
+      ],
+
+      "cwd": "${workspaceFolder}/../sandbox",
+
+      "console": "integratedTerminal",
+
+      "env": { "LOOM_DEV_MODE": "1" }
+    },
+
+    {
+      "name": "ag-skill: doctor",
+
+      "type": "debugpy",
+
+      "request": "launch",
+
+      "module": "loom.cli",
+
+      "args": ["doctor"],
+
+      "cwd": "${workspaceFolder}/../sandbox",
+
+      "console": "integratedTerminal"
+    }
+  ]
+}

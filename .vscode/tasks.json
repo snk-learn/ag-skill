@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "sync",  "type": "shell", "command": "uv sync" },
+    { "label": "help",  "type": "shell", "command": "uv run ag-skill --help" },
+    { "label": "list",  "type": "shell", "command": "uv run ag-skill list", "options": { "env": { "LOOM_DEV_MODE": "1" } } },
+    { "label": "build", "type": "shell", "command": "uv build" },
+    { "label": "test",  "type": "shell", "command": "uv run pytest -v" },
+    { "label": "lint",  "type": "shell", "command": "uv run ruff check ." }
+  ]
+}
