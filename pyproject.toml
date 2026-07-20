@@ -1,6 +1,6 @@
 [project]
 name = "ag-skill"
-version = "0.1.1"
+version = "0.1.2"
 description = "Install curated AI agent skills into any repository"
 readme = "README.md"
 authors = [
