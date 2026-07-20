@@ -2,7 +2,6 @@
 import typer
 from rich.console import Console
 
-from .commands import login as login_cmd
 from .commands import list_cmd, install, remove, upgrade, add, doctor
 #from .licensing.gate import require_license
 

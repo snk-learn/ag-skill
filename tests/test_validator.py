@@ -1,6 +1,5 @@
-from pathlib import Path
 from loom.core.validator import validate_skill
-from loom.core.catalog import list_skills, catalog_root
+from loom.core.catalog import list_skills
 
 
 def test_all_bundled_skills_are_valid():
