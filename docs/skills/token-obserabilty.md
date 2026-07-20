@@ -48,56 +48,56 @@ ag-skill install token-observability --target all
 
 ## Run the scripts manually
 
-The skill includes helper scripts in `src/loom/skills/token-observability/scripts/`.
+The skill includes helper scripts in `src/ag_skill/skills/token-observability/scripts/`.
 
 Run from the repository root.
 
 ### 1. Inventory context files
 
 ```powershell
-python src/loom/skills/token-observability/scripts/scan_repo_context.py
+python src/ag_skill/skills/token-observability/scripts/scan_repo_context.py
 ```
 
 ### 2. Analyze always-on vs on-demand context
 
 ```powershell
-python src/loom/skills/token-observability/scripts/analyze_context_size.py
+python src/ag_skill/skills/token-observability/scripts/analyze_context_size.py
 ```
 
 ### 3. Estimate one file or prompt
 
 ```powershell
-python src/loom/skills/token-observability/scripts/estimate_prompt_tokens.py AGENTS.md
+python src/ag_skill/skills/token-observability/scripts/estimate_prompt_tokens.py AGENTS.md
 ```
 
 You can also pipe content through stdin:
 
 ```powershell
-Get-Content .github/copilot-instructions.md | python src/loom/skills/token-observability/scripts/estimate_prompt_tokens.py
+Get-Content .github/copilot-instructions.md | python src/ag_skill/skills/token-observability/scripts/estimate_prompt_tokens.py
 ```
 
 ### 4. Estimate session cost
 
 ```powershell
-python src/loom/skills/token-observability/scripts/session_cost_estimator.py
+python src/ag_skill/skills/token-observability/scripts/session_cost_estimator.py
 ```
 
 Example with custom settings:
 
 ```powershell
-python src/loom/skills/token-observability/scripts/session_cost_estimator.py --turns 30 --retrieved-tokens-per-turn 1200 --output-tokens-per-turn 600
+python src/ag_skill/skills/token-observability/scripts/session_cost_estimator.py --turns 30 --retrieved-tokens-per-turn 1200 --output-tokens-per-turn 600
 ```
 
 ### 5. Compare before and after token impact
 
 ```powershell
-python src/loom/skills/token-observability/scripts/compare_before_after.py before.md after.md
+python src/ag_skill/skills/token-observability/scripts/compare_before_after.py before.md after.md
 ```
 
 ### 6. Generate one combined report
 
 ```powershell
-python src/loom/skills/token-observability/scripts/generate_observability_report.py
+python src/ag_skill/skills/token-observability/scripts/generate_observability_report.py
 ```
 
 Report output location:

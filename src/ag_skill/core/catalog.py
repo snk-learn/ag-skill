@@ -7,7 +7,7 @@ import yaml
 
 def catalog_root() -> Path:
     """Path to the bundled skills folder inside the installed package."""
-    return Path(pkg.files("loom").joinpath("skills"))
+    return Path(pkg.files("ag_skill").joinpath("skills"))
 
 
 def list_skills() -> list:

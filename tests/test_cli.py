@@ -1,5 +1,5 @@
 from typer.testing import CliRunner
-from loom.cli import app
+from ag_skill.cli import app
 
 runner = CliRunner()
 
