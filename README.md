@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/images/Logo.png" alt="ag-skill logo" width="800" />
+  <img src="https://raw.githubusercontent.com/snk-learn/ag-skill/main/docs/images/Logo.png" alt="ag-skill logo" width="800" />
 
   # ag-skill
 
@@ -40,15 +40,31 @@ With `ag-skill`, you can:
 ## Requirements
 
 - Python 3.11 or later
-- [`uv`](https://docs.astral.sh/uv/) installed
+- One of [`uv`](https://docs.astral.sh/uv/), [`pipx`](https://pipx.pypa.io/), or `pip`
 - A local repository you want to work in
 
 ## Install
 
-Install `ag-skill` directly from the GitHub repository using `uv`:
+`ag-skill` is published on [PyPI](https://pypi.org/project/ag-skill/). Install it with `uv` (recommended), `pipx`, or `pip`:
 
 ````powershell
-uv tool install ag-skill --from git+https://github.com/snk-learn/ag-skill.git@v0.1.0
+uv tool install ag-skill
+````
+
+````powershell
+pipx install ag-skill
+````
+
+````powershell
+pip install ag-skill
+````
+
+### Install from source (latest unreleased changes)
+
+To install directly from the GitHub repository instead of PyPI:
+
+````powershell
+uv tool install ag-skill --from git+https://github.com/snk-learn/ag-skill.git@main
 ````
 
 ### Verify installation
@@ -61,10 +77,20 @@ If the command is not recognized after installation, restart the terminal and tr
 
 ### Upgrading ag-skill
 
-To upgrade to a newer release tag, reinstall with the new tag and `--force`:
+If installed from PyPI:
 
 ````powershell
-uv tool install ag-skill --from git+https://github.com/snk-learn/ag-skill.git@<new-tag> --force
+uv tool upgrade ag-skill
+````
+
+````powershell
+pip install --upgrade ag-skill
+````
+
+If installed from the GitHub repository, reinstall with `--force`:
+
+````powershell
+uv tool install ag-skill --from git+https://github.com/snk-learn/ag-skill.git@main --force
 ````
 
 ## Quick Start
