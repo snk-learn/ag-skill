@@ -1,6 +1,6 @@
 [project]
 name = "ag-skill"
-version = "0.1.1"
+version = "0.1.4"
 description = "Install curated AI agent skills into any repository"
 readme = "README.md"
 authors = [
@@ -20,17 +20,17 @@ dependencies = [
 
 
 [project.scripts]
-ag-skill = "loom.cli:app"
+ag-skill = "ag_skill.cli:app"
 
 [build-system]
 requires = ["uv_build>=0.11.28,<0.12.0"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
-module-name = "loom"
+module-name = "ag_skill"
 module-root = "src"
-source-include = ["src/loom/skills/**/*"]
-wheel-include = ["src/loom/skills/**/*"]
+source-include = ["src/ag_skill/skills/**/*"]
+wheel-include = ["src/ag_skill/skills/**/*"]
 
 [dependency-groups]
 dev = [

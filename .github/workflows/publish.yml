@@ -30,15 +30,33 @@ jobs:
         run: |
           VERSION=$(grep -m1 '^version' pyproject.toml | sed -E 's/version = "(.*)"/\1/')
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Detected version: $VERSION"
 
       - name: Check if version was bumped in this push
         id: check
         run: |
+          VERSION="${{ steps.get_version.outputs.version }}"
+
           if git rev-parse HEAD~1 >/dev/null 2>&1 && \
              git diff HEAD~1 HEAD -- pyproject.toml | grep -q '^+version = '; then
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            BUMPED=true
           elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            BUMPED=true
+          else
+            BUMPED=false
+          fi
+
+          echo "Version bumped in this push: $BUMPED"
+
+          if [ "$BUMPED" = "true" ]; then
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://pypi.org/pypi/ag-skill/${VERSION}/json")
+            if [ "$STATUS" = "200" ]; then
+              echo "Version $VERSION is already published on PyPI (HTTP $STATUS). Skipping."
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+            else
+              echo "Version $VERSION is not yet on PyPI (HTTP $STATUS). Proceeding."
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+            fi
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
